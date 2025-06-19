@@ -6,7 +6,7 @@ pipeline {
     
     environment {
         MINIMUM_COVERAGE = 70
-        DOCKER_REGISTRY = "nhan925"
+        DOCKER_REGISTRY = "nguyenptn"
         SERVICES = "spring-petclinic-admin-server,spring-petclinic-api-gateway,spring-petclinic-config-server,spring-petclinic-discovery-server,spring-petclinic-customers-service,spring-petclinic-vets-service,spring-petclinic-visits-service,spring-petclinic-genai-service"
     }
     
@@ -149,7 +149,7 @@ pipeline {
                 script {
                     withCredentials([usernamePassword(credentialsId: 'github-token', usernameVariable: 'GIT_USERNAME', passwordVariable: 'GIT_PASSWORD')]) {
                         sh ''' 
-                            git clone https://$GIT_USERNAME:$GIT_PASSWORD@github.com/nhan925/devops_lab02_k8s.git k8s
+                            git clone https://$GIT_USERNAME:$GIT_PASSWORD@github.com/MinhNguyenCG/devops_lab02_k8s.git k8s
                             cd k8s
 
                             git config user.name "Jenkins"
